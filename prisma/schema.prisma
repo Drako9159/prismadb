@@ -10,8 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-
 model Explorer {
   id Int @id @default(autoincrement())
   name String @unique
@@ -25,8 +23,8 @@ model Students {
   id Int @id @default(autoincrement())
   name String @unique
   lang String @db.VarChar(255)
-  missionComander String @db.VarChar(255)
-  enrollments Int @default(autoincrement())
+  missionCommander String @db.VarChar(255)
+  enrollments Int
   hasCertification Boolean @default(false)
 }
 
