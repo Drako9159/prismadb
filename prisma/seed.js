@@ -43,7 +43,7 @@ const prisma = new PrismaClient();
             },
         });
         
-        const Student1 = await prisma.students.upsert({
+        const Student1 = await prisma.student.upsert({
             where: { name: "Estudiante 1" },
             update: {},
             create: {
@@ -55,7 +55,7 @@ const prisma = new PrismaClient();
             },
         });
 
-        const Student2 = await prisma.students.upsert({
+        const Student2 = await prisma.student.upsert({
             where: { name: "Estudiante 2" },
             update: {},
             create: {
@@ -67,8 +67,21 @@ const prisma = new PrismaClient();
             },
         });
 
+        const Commander1 = await prisma.commander.upsert({
+            where: { name: "Commander 1" },
+            update: {},
+            create: {
+                name: "Commander 1",
+                username: "ajolonauta23",
+                mainStack: "Sherpa",
+                currentEnrollment: false,
+                hasAzureCertification: false
+            },
+        });
+
         console.log("Se crearón 3 explorers en la tabla Explorer");
         console.log("Se crearón 2 estudiantes en la tabla Students");
+        console.log("Se creó un commander");
     } catch(e) {
         console.error(e);
         process.exit(1);

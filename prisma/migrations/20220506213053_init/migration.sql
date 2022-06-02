@@ -12,7 +12,7 @@ CREATE TABLE "Explorer" (
 );
 
 -- CreateTable
-CREATE TABLE "Students" (
+CREATE TABLE "Student" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "lang" VARCHAR(255) NOT NULL,
@@ -20,11 +20,26 @@ CREATE TABLE "Students" (
     "enrollments" INTEGER NOT NULL,
     "hasCertification" BOOLEAN NOT NULL DEFAULT false,
 
-    CONSTRAINT "Students_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Student_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Commander" (
+    "id" SERIAL NOT NULL,
+    "name" TEXT NOT NULL,
+    "username" VARCHAR(255) NOT NULL,
+    "mainStack" VARCHAR(255) NOT NULL,
+    "currentEnrollment" BOOLEAN NOT NULL DEFAULT false,
+    "hasAzureCertification" BOOLEAN NOT NULL DEFAULT false,
+
+    CONSTRAINT "Commander_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Explorer_name_key" ON "Explorer"("name");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Students_name_key" ON "Students"("name");
+CREATE UNIQUE INDEX "Student_name_key" ON "Student"("name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Commander_name_key" ON "Commander"("name");

@@ -19,7 +19,7 @@ model Explorer {
   dateCreated DateTime @default(now())
   lastUpdated DateTime @updatedAt
 }
-model Students {
+model Student {
   id Int @id @default(autoincrement())
   name String @unique
   lang String @db.VarChar(255)
@@ -28,7 +28,7 @@ model Students {
   hasCertification Boolean @default(false)
 }
 
-model missionCommander {
+model Commander {
   id Int @id @default(autoincrement())
   name String @unique
   username String @db.VarChar(255)
