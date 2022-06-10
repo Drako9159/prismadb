@@ -78,6 +78,17 @@ const prisma = new PrismaClient();
                 hasAzureCertification: false
             },
         });
+        const Trex = await prisma.commander.upsert({
+            where: { name: "Trex" },
+            update: {},
+            create: {
+                name: "Trex",
+                username: "ajolonauta23",
+                mainStack: "Sherpa",
+                currentEnrollment: false,
+                hasAzureCertification: false
+            },
+        });
 
         console.log("Se crearón 3 explorers en la tabla Explorer");
         console.log("Se crearón 2 estudiantes en la tabla Students");
